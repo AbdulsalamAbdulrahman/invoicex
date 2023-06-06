@@ -25,7 +25,6 @@ class DashboardViewModel extends BaseViewModel {
     const DashboardViewTablet(),
     const DashboardViewMobile(),
     const DashboardViewTablet(),
-    // const DashboardViewTablet(),
   ];
 
   Future<void> navigateToUserProfile() async {
