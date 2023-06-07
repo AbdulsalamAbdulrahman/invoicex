@@ -43,7 +43,7 @@ class _NavRailState extends State<NavRail> {
     );
   }
 
-  final List views = [DashboardViewDesktop(), DashboardViewTablet()];
+  final List views = [const DashboardViewDesktop(), const DashboardViewTablet()];
   List<NavigationRailDestination> _destinations() {
     return const [
       NavigationRailDestination(

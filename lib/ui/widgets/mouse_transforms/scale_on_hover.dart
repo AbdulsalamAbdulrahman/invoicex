@@ -7,10 +7,10 @@ class ScaleOnHover extends StatefulWidget {
   const ScaleOnHover({super.key, required this.child, this.scale = 1.1});
 
   @override
-  _ScaleOnHoverState createState() => _ScaleOnHoverState();
+  ScaleOnHoverState createState() => ScaleOnHoverState();
 }
 
-class _ScaleOnHoverState extends State<ScaleOnHover> {
+class ScaleOnHoverState extends State<ScaleOnHover> {
   final scaleTransform = Matrix4.identity()..scale(1.1);
   final noScaleTransform = Matrix4.identity()..scale(1.0);
 
@@ -24,8 +24,8 @@ class _ScaleOnHoverState extends State<ScaleOnHover> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 350),
         curve: Curves.easeOutCirc,
-        child: widget.child,
         transform: _hovering ? scaleTransform : noScaleTransform,
+        child: widget.child,
       ),
     );
   }

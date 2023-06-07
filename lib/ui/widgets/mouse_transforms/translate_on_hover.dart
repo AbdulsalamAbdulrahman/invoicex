@@ -13,10 +13,10 @@ class TranslateOnHover extends StatefulWidget {
   });
 
   @override
-  _TranslateOnHoverState createState() => _TranslateOnHoverState();
+  TranslateOnHoverState createState() => TranslateOnHoverState();
 }
 
-class _TranslateOnHoverState extends State<TranslateOnHover> {
+class TranslateOnHoverState extends State<TranslateOnHover> {
   bool _hovering = false;
 
   @override
@@ -32,8 +32,8 @@ class _TranslateOnHoverState extends State<TranslateOnHover> {
       onExit: (e) => _mouseEnter(false),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        child: widget.child,
         transform: _hovering ? hoverTransform : nonHoverTransform,
+        child: widget.child,
       ),
     );
   }

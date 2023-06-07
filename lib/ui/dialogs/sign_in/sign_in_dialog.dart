@@ -75,7 +75,7 @@ class SignInDialog extends StackedView<SignInDialogModel> with $SignInDialog {
                       verticalSpaceMedium,
                       ElevatedButton(
                           onPressed: viewModel.navigateToUserProfile,
-                          child: Text('Sign In'))
+                          child: const Text('Sign In'))
                     ],
                   )),
                 )
@@ -90,10 +90,10 @@ class SignInDialog extends StackedView<SignInDialogModel> with $SignInDialog {
               onTap: () {
                 Navigator.of(context).pop();
               },
-              child: Align(
+              child: const Align(
                 alignment: Alignment.topRight,
                 child: CircleAvatar(
-                  key: const Key('closeIconKey'),
+                  key: Key('closeIconKey'),
                   radius: 15,
                   backgroundColor: Colors.white,
                   child: Icon(
