@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import 'dashboard_viewmodel.dart';
+import 'navigation_viewmodel.dart';
 
-class DashboardViewDesktop extends ViewModelWidget<DashboardViewModel> {
-  const DashboardViewDesktop({super.key});
+class NavigationViewTablet extends ViewModelWidget<NavigationViewModel> {
+  const NavigationViewTablet({super.key});
 
   @override
-  Widget build(BuildContext context, DashboardViewModel viewModel) {
+  Widget build(BuildContext context, NavigationViewModel viewModel) {
     return const Scaffold(
       body: Center(
         child: Text(
-          'Dashboard',
+          'Hello, TABLET UI!',
           style: TextStyle(
             fontSize: 35,
             fontWeight: FontWeight.w900,

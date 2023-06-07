@@ -18,6 +18,6 @@ class SignInDialogModel extends BaseViewModel {
   final _routerService = locator<RouterService>();
 
   Future<void> navigateToUserProfile() async {
-    await _routerService.navigateToDashboardView();
+    await _routerService.navigateToNavigationView();
   }
 }
