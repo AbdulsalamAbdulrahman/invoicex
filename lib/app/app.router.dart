@@ -12,7 +12,6 @@ import 'package:stacked_services/stacked_services.dart' as _i9;
 import '../ui/views/dashboard/dashboard_view.dart' as _i3;
 import '../ui/views/home/home_view.dart' as _i2;
 import '../ui/views/navigation/navigation_view.dart' as _i7;
-import '../ui/views/navigation/widgets/navigation_rail.dart' as _i6;
 import '../ui/views/services/services_view.dart' as _i5;
 import '../ui/views/startup/startup_view.dart' as _i1;
 import '../ui/views/subscriptions/subscriptions_view.dart' as _i4;
@@ -67,14 +66,6 @@ class StackedRouterWeb extends _i10.RootStackRouter {
         barrierDismissible: false,
       );
     },
-    NavRailRoute.name: (routeData) {
-      return _i10.CustomPage<dynamic>(
-        routeData: routeData,
-        child: const _i6.NavRail(),
-        opaque: true,
-        barrierDismissible: false,
-      );
-    },
     NavigationViewRoute.name: (routeData) {
       return _i10.CustomPage<dynamic>(
         routeData: routeData,
@@ -116,10 +107,6 @@ class StackedRouterWeb extends _i10.RootStackRouter {
           path: '/services-view',
         ),
         _i10.RouteConfig(
-          NavRailRoute.name,
-          path: '/nav-rail',
-        ),
-        _i10.RouteConfig(
           NavigationViewRoute.name,
           path: '/navigation-view',
         ),
@@ -154,7 +141,7 @@ class HomeViewRoute extends _i10.PageRouteInfo<void> {
   const HomeViewRoute()
       : super(
           HomeViewRoute.name,
-          path: '/home-view',
+          path: '/',
         );
 
   static const String name = 'HomeView';
@@ -197,24 +184,12 @@ class ServicesViewRoute extends _i10.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.NavRail]
-class NavRailRoute extends _i10.PageRouteInfo<void> {
-  const NavRailRoute()
-      : super(
-          NavRailRoute.name,
-          path: '/nav-rail',
-        );
-
-  static const String name = 'NavRail';
-}
-
-/// generated route for
 /// [_i7.NavigationView]
 class NavigationViewRoute extends _i10.PageRouteInfo<void> {
   const NavigationViewRoute()
       : super(
           NavigationViewRoute.name,
-          path: '/navigation-view',
+          path: '/home',
         );
 
   static const String name = 'NavigationView';
@@ -273,14 +248,6 @@ extension RouterStateExtension on _i9.RouterService {
     );
   }
 
-  Future<dynamic> navigateToNavRail(
-      {void Function(_i10.NavigationFailure)? onFailure}) async {
-    return navigateTo(
-      const NavRailRoute(),
-      onFailure: onFailure,
-    );
-  }
-
   Future<dynamic> navigateToNavigationView(
       {void Function(_i10.NavigationFailure)? onFailure}) async {
     return navigateTo(
@@ -333,14 +300,6 @@ extension RouterStateExtension on _i9.RouterService {
       {void Function(_i10.NavigationFailure)? onFailure}) async {
     return replaceWith(
       const ServicesViewRoute(),
-      onFailure: onFailure,
-    );
-  }
-
-  Future<dynamic> replaceWithNavRail(
-      {void Function(_i10.NavigationFailure)? onFailure}) async {
-    return replaceWith(
-      const NavRailRoute(),
       onFailure: onFailure,
     );
   }
